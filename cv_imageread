@@ -1,0 +1,14 @@
+import cv2
+import argparse
+
+ap= argparse.ArgumentParser()
+ap.add_argument("-i" ,"--image" ,required=True, help="path to image")
+args= vars(ap.parse_args() )
+
+image =cv2.imread(args["image"])
+print("Height: %d" %image.shape[0])
+print("width: %d" %image.shape[1])
+print("channels: %d" %image.shape[2])
+
+cv2.imshow("IMGAE" , image)
+cv2.waitKey(0)
